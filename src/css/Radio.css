@@ -1,0 +1,24 @@
+.UIWck__RadioGroup {
+  display: grid;
+  grid-column-gap: 14px;
+  margin: 6px 0;
+  outline: none;
+}
+.UIWck__RadioGroup__radio, .UIWck__RadioGroup__radio--active {
+  background-color: #9bb9d6;
+  border-radius: 30px;
+  border-color: #9bb9d6;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.1s;
+  user-select: none;
+}
+.UIWck__RadioGroup__radio:hover, .UIWck__RadioGroup__radio--active:hover {
+  background-color: #89accf;
+}
+.UIWck__RadioGroup__radio--active {
+  background-color: #064f99 !important;
+}

@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.wecForm__Button, .wecForm__Button--danger, .wecForm__Button--primary, .wecForm__Button--outline, .wecForm__Button--outline--danger, .wecForm__Button--outline--primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 0 26px;
+  height: 40px;
+  direction: rtl;
+  transition: 0.2s;
+}
+@media all and (max-width: 480px) {
+  .wecForm__Button, .wecForm__Button--danger, .wecForm__Button--primary, .wecForm__Button--outline, .wecForm__Button--outline--danger, .wecForm__Button--outline--primary {
+    height: 60px;
+  }
+}
+.wecForm__Button:disabled, .wecForm__Button--danger:disabled, .wecForm__Button--primary:disabled, .wecForm__Button--outline:disabled, .wecForm__Button--outline--danger:disabled, .wecForm__Button--outline--primary:disabled {
+  background-color: #ebf1f7 !important;
+  cursor: not-allowed;
+  color: #a2beda !important;
+  border-color: #ebf1f7 !important;
+}
+.wecForm__Button--outline, .wecForm__Button--outline--danger, .wecForm__Button--outline--primary {
+  background-color: transparent;
+}
+.wecForm__Button--outline .wecForm__Button__arrows, .wecForm__Button--outline--danger .wecForm__Button__arrows, .wecForm__Button--outline--primary .wecForm__Button__arrows {
+  background: url("../resources/‏‏btnArrowsPeacockBlue.svg");
+}
+.wecForm__Button--outline--primary {
+  border: 4px solid #ebf1f7;
+  color: #ebf1f7;
+}
+.wecForm__Button--outline--primary:hover {
+  background-color: #ebf1f7;
+  color: #ffffff;
+}
+.wecForm__Button--outline--primary:hover .wecForm__Button__arrows {
+  background: url("../resources/btnArrows.svg");
+}
+.wecForm__Button--outline--danger {
+  border: 4px solid #ed1c24;
+  color: #ed1c24;
+}
+.wecForm__Button--outline--danger:hover {
+  background-color: #ed1c24;
+  color: #ffffff;
+}
+.wecForm__Button--primary {
+  background-color: #064f99;
+  color: #ffffff;
+}
+.wecForm__Button--primary:hover {
+  background-color: #054280;
+}
+.wecForm__Button--danger {
+  color: #ffffff;
+  background-color: #ed1c24;
+}
+.wecForm__Button--danger:hover {
+  background-color: #de1219;
+}
+.wecForm__Button img, .wecForm__Button--outline img, .wecForm__Button--outline--primary img, .wecForm__Button--outline--danger img, .wecForm__Button--primary img, .wecForm__Button--danger img {
+  height: 20px;
+  margin-left: 10px;
+}
+.wecForm__Button__arrows {
+  background: url("../resources/btnArrows.svg");
+  width: 10px;
+  height: 11px;
+  margin-top: 1px;
+  margin-right: 10px;
+}

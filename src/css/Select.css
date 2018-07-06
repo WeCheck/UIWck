@@ -1,0 +1,120 @@
+.UIWck__select {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0 5px 0;
+}
+.UIWck__select__label, .UIWck__select__label--open {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background: url("../resources/arrowDownPeacockBlue.svg") no-repeat 25px #ebf1f7;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 4px;
+  padding: 0 14px;
+  user-select: none;
+}
+@media all and (max-width: 480px) {
+  .UIWck__select__label, .UIWck__select__label--open {
+    height: 60px;
+    justify-content: center;
+  }
+}
+.UIWck__select__label--open {
+  border-radius: 4px 4px 0 0;
+}
+.UIWck__select__label:hover, .UIWck__select__label--open:hover {
+  background: url("../resources/arrowDownPeacockBlue.svg") no-repeat 25px #d9e4f0;
+}
+.UIWck__select .dropdown--open {
+  max-height: 200px;
+  animation: active 0.2s forwards;
+}
+.UIWck__select__dropdown {
+  background-color: #ebf1f7;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  list-style-type: none;
+  top: 40px;
+  transition: 0.3s;
+  max-height: 0;
+  overflow-y: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 5;
+}
+@media all and (max-width: 480px) {
+  .UIWck__select__dropdown {
+    top: 60px;
+  }
+}
+.UIWck__select__dropdown li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  outline: none;
+  user-select: none;
+  padding: 0 14px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.2s;
+}
+@media all and (max-width: 480px) {
+  .UIWck__select__dropdown li {
+    height: 60px;
+    justify-content: center;
+  }
+}
+.UIWck__select__dropdown li:hover {
+  background-color: #b4cae0;
+  color: #ffffff;
+  z-index: -2;
+}
+.UIWck__select__dropdown li:active {
+  background-color: #064f99;
+  color: #ffffff;
+}
+@media all and (max-width: 480px) {
+  .UIWck__select__dropdown li:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 30%;
+    left: 30%;
+    background-color: #064f99;
+    height: 80px;
+    z-index: -1;
+    border-radius: 30px;
+    opacity: 0;
+    transition: 0.8s;
+  }
+  .UIWck__select__dropdown li:focus, .UIWck__select__dropdown li:active {
+    background-color: #ebf1f7;
+    color: #ffffff;
+  }
+  .UIWck__select__dropdown li:focus:before, .UIWck__select__dropdown li:active:before {
+    opacity: 1;
+    right: -200px;
+    left: -200px;
+  }
+}
+.UIWck__select__dropdown .selected {
+  background-color: #064f99 !important;
+  color: #ffffff;
+  transition: 0.8s;
+}
+
+@keyframes active {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: scroll;
+  }
+}
