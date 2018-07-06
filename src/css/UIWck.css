@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:400,700');
+
+.UIWck {
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: 'Assistant', sans-serif;
+    font-size: 16px;
+}
