@@ -1,0 +1,117 @@
+@import "./wckStyles.scss";
+
+.UIWck__select {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0 5px 0;
+  &__label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    @include respond-to('handhelds') {
+      height: 60px;
+      justify-content: center;
+    }
+    background: url('../resources/arrowDownPeacockBlue.svg') no-repeat 25px #ebf1f7;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 4px;
+    padding: 0 14px;
+    user-select: none;
+    &--open {
+      @extend .UIWck__select__label;
+      border-radius: 4px 4px 0 0;
+    }
+    &:hover {
+      background: url('../resources/arrowDownPeacockBlue.svg') no-repeat 25px darken(#ebf1f7, 5%);
+    }
+  }
+  .dropdown--open {
+    max-height: 200px;
+    animation: active 0.2s forwards;
+  }
+  &__dropdown {
+    background-color: #ebf1f7;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+    position: absolute;
+    list-style-type: none;
+    top: 40px;
+    transition: 0.3s;
+    @include respond-to('handhelds') {
+      top: 60px;
+    }
+    max-height: 0;
+    overflow-y: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      outline: none;
+      user-select: none;
+      @include respond-to('handhelds') {
+        height: 60px;
+        justify-content: center;
+      }
+      padding: 0 14px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: 0.2s;
+      &:hover {
+        background-color: #b4cae0;
+        color: #ffffff;
+        z-index: -2;
+      }
+      &:active {
+        background-color: $peacock-blue;
+        color: #ffffff;
+      }
+      @include respond-to('handhelds') {
+        &:before {
+          content: '';
+          position: absolute;
+          top: -10px;
+          right: 30%;
+          left: 30%;
+          background-color: $peacock-blue;
+          height: 80px;
+          z-index: -1;
+          border-radius: 30px;
+          opacity: 0;
+          transition: 0.8s;
+        }
+        &:focus, &:active {
+          background-color: #ebf1f7;
+          color: #ffffff;
+          &:before {
+            opacity: 1;
+            right: -200px;
+            left: -200px;
+          }
+        }
+      }
+    }
+    .selected {
+      background-color: $peacock-blue !important;
+      color: #ffffff;
+      transition: 0.8s;
+    }
+  }
+}
+
+@keyframes active {
+  0% {
+    overflow-y: hidden;
+  }
+  100% {
+    overflow-y: scroll;
+  }
+}

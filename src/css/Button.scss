@@ -1,0 +1,84 @@
+@import "./wckStyles.scss";
+
+.wecForm__Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 0 26px;
+  height: 40px;
+  direction: rtl;
+  transition: 0.2s;
+
+  @include respond-to('handhelds') {
+    height: 60px;
+  }
+
+  &:disabled {
+    background-color: #ebf1f7 !important;
+    cursor: not-allowed;
+    color: darken(#ebf1f7, 20%) !important;
+    border-color: #ebf1f7 !important;
+  }
+
+  &--outline {
+    @extend .wecForm__Button;
+    background-color: transparent;
+    .wecForm__Button__arrows {
+      background: url("../resources/‏‏btnArrowsPeacockBlue.svg");
+    }
+
+    &--primary {
+      @extend .wecForm__Button--outline;
+      border: 4px solid $peacock-blue;
+      color: $peacock-blue;
+      &:hover {
+        background-color: $peacock-blue;
+        .wecForm__Button__arrows {
+          background: url("../resources/btnArrows.svg");
+        }
+        color: #ffffff;
+      }
+    }
+    &--danger {
+      @extend .wecForm__Button--outline;
+      border: 4px solid #ed1c24;
+      color: #ed1c24;
+      &:hover {
+        background-color: #ed1c24;
+        color: #ffffff;
+      }
+    }
+  }
+
+  &--primary {
+    @extend .wecForm__Button;
+    background-color: $peacock-blue;
+    color: #ffffff;
+    &:hover {
+      background-color: darken($peacock-blue, 5%);
+    }
+  }
+  &--danger {
+    @extend .wecForm__Button;
+    color: #ffffff;
+    background-color: #ed1c24;
+    &:hover {
+      background-color: darken(#ed1c24, 5%);
+    }
+  }
+
+  img {
+    height: 20px;
+    margin-left: 10px;
+  }
+  &__arrows {
+    background: url("../resources/btnArrows.svg");
+    width: 10px;
+    height: 11px;
+    margin-top: 1px;
+    margin-right: 10px;
+  }
+}

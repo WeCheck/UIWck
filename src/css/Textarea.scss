@@ -1,0 +1,12 @@
+@import "./wckStyles.scss";
+
+.wckForm__textarea {
+  background-color: #ffffff;
+  color: #1b3244;
+  width: 100%;
+  padding: 4px 4px;
+  border: 0;
+  border-bottom: 1px solid $peacock-blue;
+  outline: none;
+  margin: 6px 0;
+}
